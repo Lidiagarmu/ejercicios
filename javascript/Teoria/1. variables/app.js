@@ -54,5 +54,3 @@ console.log(suma(toy1.price, toy2.price));
 
 console.log(suma(213, 1));
 console.log(suma("a", "c"));
-
-//Prueba
