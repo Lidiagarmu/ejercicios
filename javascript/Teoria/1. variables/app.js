@@ -54,3 +54,9 @@ console.log(suma(toy1.price, toy2.price));
 
 console.log(suma(213, 1));
 console.log(suma("a", "c"));
+
+//prueba inventada por mi con la funcion typeof la cual nos indica el tipo de variable en cada momento
+let num = typeof 3;
+console.log(num);
+let lidi = typeof "hola";
+console.log(lidi);
