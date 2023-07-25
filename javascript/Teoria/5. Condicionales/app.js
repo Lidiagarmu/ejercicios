@@ -79,3 +79,14 @@ switch (cantante) {
     console.log("No hay ritmo que lo baile!");
     break;
 }
+
+//ejemplos bootcamp
+
+let ageAna = 16;
+
+if (ageAna > 18) {
+  console.log("ana puede conducir si se saca el carnet");
+} else {
+  console.log("es una baby ");
+}
+console.log("ageAna");
