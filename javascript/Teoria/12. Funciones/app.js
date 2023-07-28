@@ -38,13 +38,12 @@ function pokemon() {
   // lo que aparece entre llaves es conocido como el cuerpo de la funcion
   console.log("Pikachu, ¡IMPACT TRUENO!");
 }
-
-function podemonParams(name, attack) {
-  console.log("¡${name} ${attack}");
+pokemon();
+function pokemonParams(name, attack) {
+  console.log(`¡name: ${name}, attack: ${attack}!`); // esto `${nombre del parametro}`es un template string  y se utiliza para que el valor de los parametros vayan cambiando segun lo vayamos modificando
 } // una vez tenemos nuestras funciones declaradas tenemos que invocarlas para que realicen la funcionalidad programada
 
-pokemon();
-podemonParams("Charmander", "Ascuas");
+pokemonParams("Charmander", "Ascuas");
 pokemonParams("Squirtel", "Pistola de agua");
 
 // 2) VALORES PREDETERMINADOS --> si una funcion es llamada pero no se le proporciona un argumento o parametro, su valo correspondiente se convierte en undefined
@@ -71,3 +70,90 @@ function pokemonAttackParamsDefault(name, attack = "Ataque arena") {
 }
 
 pokemonAttackParamsDefault("Onix"); // ¡Onix Ataque arena!
+
+//3) RETORNO DE LAS FUNCIONES --> si queremos transformar un dato y devolver un valor nuevo tenemos que retornrar el elemento manipulado a traves de RETURN
+
+function sumar(numA, numB) {
+  return numA + numB;
+} // nunca añadir codigo despues de un return dentro del codigo pues no se va a ejecutar
+let results = suma(5, 20); //valor es 25
+console.log(results);
+
+//es posible usar RETURN sin ningun valor, esto hace que la funcion salga o termine inmediatamente
+
+function showMovie(age) {
+  if (!checkAge(age)) {
+    return;
+  }
+  console.log("Mostrandote la pelicula");
+} // si checkAge(age) devuelve false, entonces shorMovie no mostrara el valor por consola
+
+/* 4) ALTERNATIVA A PARAMETROS INDETERMINADOS --> A veces tiene sentido asignar valores predeterminados, no en la declaracion
+de funcion, sino en un estadio posterior. Podemos verificar si un parametro es pasado durante la ejecucion de la funcion
+comparandolo con undefined*/
+
+function showPokemon(name) {
+  if (name === undefined) {
+    //si falta el parametro
+    name = "Magikarp";
+  }
+  console.log(name);
+}
+showPokemon(); //muestra Magikarp
+
+//o seguiendo el ejemplo anterior podemos usar el operador ||
+
+function showPokemoon(name) {
+  //si name es indefinida o falsa, la establece a "Magikarp"
+  name = name || "Magikarp";
+  return name; // --> aqui estoy CREANDO la funcion
+}
+showPokemoon(); // --> aqui estoy EJECUTANDO la funcion
+console.log(showPokemoon());
+
+/*5) NOMBRADO DE FUNCIONES --> las funciones son acciones. Entonces SU NOMBRE suele ser un verbo. 
+Debe ser breve lo mas preciso posible y describir lo que hace la funcion para que alguien que lea el codigo 
+obtenga una indicacion de lo que hace la funcion*/
+
+//showMessage(..)  --> muestra un mensaje
+//getAge(..) --> devuelve la edad
+
+/* 6) ARROW FUNCTIONS --> Es una manera de generar funciones mas compacta y ademas nos ayudara a 
+entender mejor los problemas del SCOPE.  
+Al ver la sintaxis, ya no hace falta escribir la palabra FUNCTION, lo sustituimos por la flecha =>
+
+La arrow function tienen la capacidad de capturar el objeto THIS del contecto donde la ARROW se ejecuta
+y asi utilizarlo dentro de su bloque de sentencias.*/
+
+const getName = () => {
+  console.log("Devolviendo nombre");
+  return "Carlos";
+};
+const nombre = getName();
+console.log(nombre);
+
+//Ahora un ejemplo omitiendo el return
+
+const getSurname = () => "Martin";
+const surname = getSurname();
+console.log(surname);
+
+//en el siguiente ejemplo, la funcion nos devuelve un mensaje sin la necesidad de tener un return
+
+const helloWorld = () => "Hola mundo";
+const hello = helloWorld();
+console.log(hello);
+
+//el ejemplo anterior en caso de querer usar un return:
+
+const helloWorldd = () => {
+  const messageToWorld = "Hello world";
+  return messageToWorld;
+};
+helloWorldd(); // aqui la estoy ejecutando pero para verlo solo en consola esto no haria falta
+console.log(helloWorldd()); // aqui ejecuto la funcion EN CONSOLA. Lo que hago es escribir el nombre de la funcion y sus ()
+
+// EN EL CASO DE QUERER DEVOLVER UN OBJECT INLINE, LA SINTAXIS DEBERA SER LA SIGUIENTE:
+const myObjt = () => ({ atribute: "atribute", atribute: "atribute" });
+
+// 7) ARGUMENTOS EN LAS ARROW FUNCTIONS --> Como ya sabeis
