@@ -122,7 +122,7 @@ obtenga una indicacion de lo que hace la funcion*/
 entender mejor los problemas del SCOPE.  
 Al ver la sintaxis, ya no hace falta escribir la palabra FUNCTION, lo sustituimos por la flecha =>
 
-La arrow function tienen la capacidad de capturar el objeto THIS del contecto donde la ARROW se ejecuta
+La arrow function tienen la capacidad de capturar el objeto THIS del contexto donde la ARROW se ejecuta
 y asi utilizarlo dentro de su bloque de sentencias.*/
 
 const getName = () => {
@@ -156,4 +156,45 @@ console.log(helloWorldd()); // aqui ejecuto la funcion EN CONSOLA. Lo que hago e
 // EN EL CASO DE QUERER DEVOLVER UN OBJECT INLINE, LA SINTAXIS DEBERA SER LA SIGUIENTE:
 const myObjt = () => ({ atribute: "atribute", atribute: "atribute" });
 
-// 7) ARGUMENTOS EN LAS ARROW FUNCTIONS --> Como ya sabeis
+// 7) ARGUMENTOS EN LAS ARROW FUNCTIONS --> Como ya sabeis en las funciones pueden entrar parametros que indiquen los valores con los que vamos a trabajar en el caso de las arrow functions
+
+const multiTwo = (x) => x * 2;
+const result = multiTwo(3);
+console.log(result);
+
+// * en el resto de casos si es necesario especificar los parenteisis
+
+const multi = (a, b) => a * b;
+const multiplicacion = multi(2, 2);
+console.log(multiplicacion);
+
+// * existe la opcion de tener valores por defecto
+
+const multiDefault = (a, b = 3) => a * b;
+const operation = multiDefault(2);
+console.log(operation);
+
+/*  8) LIMITACIONES ARROW FUNTIONS:
+
+1. No tienen una palabra clave THIS (en una funcion tradicional, la palabra clave THIS 
+  se refiere al objeto QUE LLAMA a la funcion. En una funcion Arrow, THIS se refiere
+  al objeto QUE CONTIENE la funcion. Esto puede ser un problema por ejemplo cuando 
+  se necesita acceder al objeto que llama a la funcion
+
+2. No pueden ser usadas como CONSTRUCTORES, es decir, no pueden ser utilizadas con la palabra clave NEW
+
+3. No tienen palabra clave ARGUMENTS. Esta es una variable local que se crea en todas las funciones
+y que contiene una lista de argumentos pasados a la funcion. En una arrow functions, no se 
+puede acceder a ARGUMENTS
+
+4. No pueden ser usadas COMO METODOS de objetos. */
+
+//ejemplo de una de las limitaciones
+
+const obj = {
+  nombre: "Lidi",
+  sayHi: () => {
+    console.log(`Hi, my name is ${this.nombre}`);
+  },
+};
+obj.sayHi(); // muestra "Hi, my name is undefined"
