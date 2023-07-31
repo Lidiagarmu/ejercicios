@@ -60,3 +60,49 @@ let num = typeof 3;
 console.log(num);
 let lidi = typeof "hola";
 console.log(lidi);
+
+//--------------------------------CLASES VARIABLES-------------------------------------------------------------------------------------------//
+
+//nombres no validos
+// let let = 123;  --> palabras reservadas
+// let return = 123;
+// let 1name = "Pepe;" --> no puede empezar por numero
+// let my-name = "Pepe"; --> no puede contener guiones
+
+// nombres validos
+let nyNmame = "Pepe"; // --> se utiliza camelCase
+
+//-------------------------------------------//
+let message = "Hola desde fuera de la funcion";
+console.log(message);
+
+function showMessage() {
+  let message = "Hola desde dentro de la funcion";
+  console.log(message);
+} // creo la funcion pero para verla en terinal necesito ejecutarlo
+showMessage(); // -------> SUPER IMPORTANTE EJECUTAR la funcion
+
+let nameExt = "Juan"; // --> variable GLOBAL
+function showMyName() {
+  let nameGreeting = "Hola " + nameExt;
+  console.log(nameGreeting); // ------> solo tengo acceso a la variable LOCAL nameGreeting si hago console.log desde dentro de la funcion. Muestra "Hola Juan"
+}
+
+// console.log(nameGreeting); ----> SI CONSOLEO fuera de la funcion el terminal me muestra nameGreeting is not defined pues es una variable local de dentro de la funcion
+showMyName();
+console.log(nameExt); // ----> este console.log solo tiene acceso a la variable externa GLOBAL nameExt. Muestra "Juan"
+
+let pokemonExt = "Charmander";
+
+function showPokemon() {
+  pokemonExt = "Squirtle"; // (1) Cambio la variable externa
+
+  let message = "Hola, " + pokemonExt;
+  console.log(message);
+}
+
+console.log(pokemonExt); // Charmander antes de llamar la funcion anajo por lo que mmuestra "Charmander" antes de "Hola, Squirtle"
+
+showPokemon(); // aqui estoy llamadno a la funcion la ejecuto y muestra pues "Hola, Squirtle". Si no ejecuto la funcion es decir, si borro esta linea no me modifica el valor a squirtle.
+//esta llamada a la funcion de la linea anterior si no la pongo jamas me ejecutara la funcion, al leer el  codigo se la pasa de largo
+console.log(pokemonExt); // Squirtle, el valor fue modificado por la funcion. Muesra "Squirtle" y no "Charmander" porque el valor fue modificado y estoy consoleando despues de llamar a la funcion

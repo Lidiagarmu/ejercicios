@@ -28,7 +28,7 @@ for (inicializacion; condicion; actualizacion) {
 for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
-/* -la variable i se INICIALIZA a 1 al principio del bucle
+/*   -la variable i se INICIALIZA a 1 al principio del bucle
      -se EVALUA la condicion i<= 10, que se cumple mientras i sea menor o igual que 10. 
       por lo que se ejecuta el bloque del codigo, que imprime el valor i en la consola
       -al final de cada iteracion se ejecuta la ACTUALIZACION i++, que incrementa el valor de i en 1 
@@ -47,3 +47,44 @@ while (i <= 10) {
   console.log("El valor del bucle es: " + i);
   i++;
 } // mismo ejemplo que en el bucle FOR para comparar
+
+// ejemplo  bucle whileLidi
+let l = 3;
+while (l <= 9) {
+  console.log("El bucle seria: " + l);
+  l++;
+}
+
+// ejemplo mas practico. Creamos una lista de numeros y lo iteramos en cuanto se cumpla la condicion queremos sacar un mensaje por consola
+
+let numberList = [1, 2, 3, 4, 7, 8, 10, 11, 13];
+for (let index = 0; index < numberList.length; index++) {
+  if (numberList[index] === 13) {
+    console.log(`Dicen que da mala suerte jiji, ---> en la posición  ${index}`);
+  }
+}
+
+/*Podemos ANIDAR tantos BUCLES como queramos, es decir, si nuestro elemento iterado tiene a su vez otro elemento que es posible iterar
+podemos usar un blucle dentro de otro bucle */
+
+let studentList = [
+  {
+    name: "JdelaCruz",
+    codeList: ["Js", "React"],
+  },
+  {
+    name: "EdDarko",
+    codeList: ["Js", "Node"],
+  }, // let studentList ES UNA VARIABLE ARRAY conpuesta por 2 objetos. el primero es una clave con valor string y la segunda clave con array
+];
+
+console.log("longitud studentList", studentList);
+for (let i = 0; i < studentList.length; i++) {
+  console.log("recorremos studentList", studentList[i]);
+
+  for (let j = 0; j < studentList[i].codeList.length; j++) {
+    console.log(studentList[i].name + "Works: " + studentList[i].codeList[j]);
+  }
+}
+
+// 4) FOREACH
