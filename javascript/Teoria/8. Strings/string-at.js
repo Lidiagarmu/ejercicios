@@ -65,3 +65,30 @@ console.log(nickname.toUpperCase()); // retorna "PEDRO"
 
 const frase = "          Luke, yo soy tu padre    ";
 console.log(frase.trim()); // retorna "Luke, yo soy tu padre"
+
+//-------------------------------------CLASE STRINGS-----------------//
+
+// cada tipo de datos tiene sus metodos. un metodo es una funcion que ya esta definida por javascript y que yo quiero utilizar
+
+// INCISO: en vez de concatener de esta manera: console.log(sentence + "asfafa" + "afag")
+const sentence = "Yo soy Batman";
+
+let index = 5;
+
+// lo mejor es concatener con las backstreet:
+
+console.log(
+  `Voy a usar el index ${index} para que me devuelva el elemento  en esa posicion ${sentence.at(
+    index
+  )}` // el metodo  .at  te devuelve el elemento en la posicion indicada . le pasas un numero, en este caso el de index y te devuelve el elemento que esta en esa posicion, en este caso la "y"
+); // --> con el $ y {} puede acceder directamente al index y dentro de las llaves me permite operar
+
+console.log(
+  `Voy a usar el index ${index}  para que me devuelva el elemento en esa posicion ${sentence.at(
+    index - 1
+  )}`
+); // en este caso opera 5-1 por lo que muestra "o" posicion cuarta
+
+console.log(
+  `Voy a NO usar el index para que me deuelva el elemento en esa posicion por defecto ${sentence.at()}`
+); // cuando a .at no le pasamos ningun valor por defecto devuelve la posicion 0 en este caso la "Y" y si pasamos un -1 es el ultimo "n"
