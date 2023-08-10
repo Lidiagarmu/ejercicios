@@ -4,12 +4,11 @@ Hay  varios tipos de bucles y cada uno tiene su propia sintaxis y usos especific
 
 1)BUCLE FOR
 2)BUCLE WHILE
-3)BUCLE FOR
-4)BUCLE FOREACH
-5)BUCLE FOR OF
-6)BUCLE FOR IN
-7)BUCLE FOR OF vs FOR IN
-8)BUCLE FOR OF vs FOR EACH */
+3)BUCLE FOREACH
+4)BUCLE FOR OF
+5)BUCLE FOR IN
+6)BUCLE FOR OF vs FOR IN
+7)BUCLE FOR OF vs FOR EACH */
 
 /* 1) FOR --> se usa para ejecutar un bloque de codigo un nº determinado de veces. Sintaxis:
 
@@ -87,4 +86,54 @@ for (let i = 0; i < studentList.length; i++) {
   }
 }
 
-// 4) FOREACH
+// 3) FOREACH --> Es util para generar una funcion para ejecutarla por cada vuelta de bucle
+
+let studenList2 = ["IkerCas", "FerTorres", "RoberLewan", "NeymarJr"];
+/*no arrow*/
+studenList2.forEach(function (element) {
+  console.log(element);
+});
+
+/*arrow */
+let studenList3 = ["CrisRonaldo", "KokeResu", "JanOblack", "CholoSim"];
+
+studenList3.forEach((element) => console.log(element));
+
+/* 4) FOR OF --> este bucle nos permite ejecutar un atajo para realizar bucles. Nos devuelve
+ automanticamente los valores de los elementos actuales iterando a través del objeto a traves de la siguiente sintaxis: 
+ 
+ for (variable of objeto_iterable) {...}
+ */
+
+//Este bucle itera a lo largo de los objetos iterables como Array, Map, String, Arguments, etc...
+
+// Array
+
+let ninjaTurtles = ["Leonardo", "Michelangelo", "Donatelo", "Raphael"];
+findLongesWord;
+
+// String
+
+let name = "Master Khan";
+for (var word of name) {
+  console.log(word);
+}
+// Set
+
+let powerRangers = new Set();
+powerRangers.add(1);
+powerRangers.add("Rojo");
+
+for (var ranger of powerRangers) {
+  console.log(ranger);
+}
+
+// Arguments
+
+function mixArgs() {}
+
+// 5) FOR IN
+
+// 6) FOR OF VS FOR OF
+
+// 7) FOR OF VS FOR EACH
