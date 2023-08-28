@@ -33,6 +33,8 @@ for (let i = 1; i <= 10; i++) {
       -al final de cada iteracion se ejecuta la ACTUALIZACION i++, que incrementa el valor de i en 1 
       */
 
+//-----------------------------------------------------------------------------------------------------------------
+
 /* 2) WHILE --> se usa para ejecutar un bloque de codigo mientras se cumpla una determinada condicion. Sintaxis:
 
 while (condicion) {
@@ -86,6 +88,8 @@ for (let i = 0; i < studentList.length; i++) {
   }
 }
 
+//-----------------------------------------------------------------------------------------------------------------
+
 // 3) FOREACH --> Es util para generar una funcion para ejecutarla por cada vuelta de bucle
 
 let studenList2 = ["IkerCas", "FerTorres", "RoberLewan", "NeymarJr"];
@@ -99,6 +103,8 @@ let studenList3 = ["CrisRonaldo", "KokeResu", "JanOblack", "CholoSim"];
 
 studenList3.forEach((element) => console.log(element));
 
+//-----------------------------------------------------------------------------------------------------------------
+
 /* 4) FOR OF --> este bucle nos permite ejecutar un atajo para realizar bucles. Nos devuelve
  automanticamente los valores de los elementos actuales iterando a través del objeto a traves de la siguiente sintaxis: 
  
@@ -110,8 +116,6 @@ studenList3.forEach((element) => console.log(element));
 // Array
 
 let ninjaTurtles = ["Leonardo", "Michelangelo", "Donatelo", "Raphael"];
-findLongesWord;
-
 // String
 
 let name = "Master Khan";
@@ -132,8 +136,112 @@ for (var ranger of powerRangers) {
 
 function mixArgs() {}
 
-// 5) FOR IN
+//-----------------------------------------------------------------------------------------------------------------
 
-// 6) FOR OF VS FOR OF
+/* 5) FOR IN --> nos da la posibilidad a la hora de generar bucles de recorrer todos los indices del objeto, 
+de esta manera no obtendremos el valor sino la propiedad enumerable
 
-// 7) FOR OF VS FOR EACH
+en el caso de :
+   un ARRAY obtendremos la posicion de cada uno de los elementos
+   un OBJETO: obtendremos la clave
+*/
+//      objeto:
+
+let batman = {
+  nombre: " Bruce",
+  apellidos: " Wayne",
+  localizacion: " Gotham",
+  profesion: " Multimillonario",
+};
+for (let clave in batman) {
+  console.log("Batman tiene la clave " + clave + " con valor:" + batman[clave]);
+} // me devuelve:
+//Batman tiene la clave nombre con valor: Bruce
+//Batman tiene la clave apellidos con valor: Wayne
+//Batman tiene la clave localizacion con valor: Gotham
+//Batman tiene la clave profesion con valor: Multimillonario
+
+//     array:
+
+const eternals = ["Ikaris", "Kingo", "Sersi", "Sprite"];
+
+for (const eternal in eternals) {
+  console.log(
+    "Este eterno tiene la posicion " +
+      eternal +
+      " con el valor: " +
+      eternals[eternal]
+  );
+}
+// devuelve:
+//Este Eterno tiene la posición 0 con el valor: Ikaris
+//Este Eterno tiene la posición 1 con el valor: Kingo
+//Este Eterno tiene la posición 2 con el valor: Sersi
+//Este Eterno tiene la posición 3 con el valor: Sprite
+//Este Eterno tiene la posición 4 con el valor: Phastos
+//Este Eterno tiene la posición 5 con el valor: Makkari
+//Este Eterno tiene la posición 6 con el valor: Druig
+//Este Eterno tiene la posición 7 con el valor: Gilgamesh
+
+//-----------------------------------------------------------------------------------------------------------------
+
+// 6) FOR OF VS FOR IN
+
+//------------------------For OF solo puede iterar arrays, strings iterables  (objetos no recorre) y este devuelve valores
+//------------------------For IN puede iterar cualquier tipo de objeto y este devuelve claves
+
+var dieHardArray = [1, 2, "Simon", "John McClane", "Zeus Carver"];
+
+var dieHardObj = {
+  name: "John",
+  surname: "McClane",
+  age: 37,
+};
+
+// Iterar un Array
+for (value of dieHardArray) {
+  console.log(value);
+}
+
+for (key in dieHardArray) {
+  console.log(key);
+}
+
+// Iterar un Objeto
+
+for (key in dieHardObj) {
+  console.log(key);
+}
+
+/*for (value of dieHardObj) {
+  console.log(value); --------------> NO DEVUELVE NADA, DA ERROR puesto que hay que utilizar for IN
+} */
+
+//------------------------------------------------------------------------------------------------------------------
+
+/* 7) FOR OF VS FOR EACH:
+
+for OF --> puede iterar en cualquier tipo de objeto iterable
+for EACH --> solo puede en los arrays */
+
+var backToTheFutureArray = [21, 10, 2015, "Delorean"];
+var backToTheFutureString = "Dr.Emmett Brown";
+
+// Iterar un Array
+for (value of backToTheFutureArray) {
+  console.log(value);
+}
+
+backToTheFutureArray.forEach(function (value, index) {
+  // podemos acceder al índice
+  console.log(value, index); // este console.log muestra 21 y su posicion 0 10 y su posicion 1... es decir VALOR y POSICION
+});
+
+// Iterar un String
+for (value of backToTheFutureString) {
+  console.log(value);
+}
+
+/* backToTheFutureString.forEach(function (value, index) {
+  console.log(value, index);
+}); -------------------------------> salta ERROR en terminal al hacer console.log puesto que for each solo puede iterar ARRAYS */
