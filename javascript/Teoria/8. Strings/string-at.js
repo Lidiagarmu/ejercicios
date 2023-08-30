@@ -1,6 +1,6 @@
 // al igual en los arrays, en los strings podemos acceder a cada uno de ellos de manera individual haciendo use de corchetes []
 const pokemon = "pikachu";
-console.log(pokemon[3]);
+console.log(pokemon[3]); // consola devuelve "a" que es la posicion 3
 
 /*metodos que se usan cuando trabajas con Strings
 1) length
@@ -41,7 +41,7 @@ const quoote =
   "Un Anillo para gobernarlos a todos. Un Anillo para encontrarlos, un Anillo para atraerlos a todos y atarlos a las tinieblas en la Tierra de mordor  donde se extienden las Sombras.";
 console.log(quoote.replaceAll("Anillo", "Gato"));
 
-// slice -->devuelve una nueva cadena con la porcion delimitada entre la posicion del primer argumente y la posicion del segundo argumento
+// slice -->devuelve una nueva cadena con la porcion delimitada entre la posicion del primer argumento y la posicion del segundo argumento
 
 const album = "Master of Puppets"; // en este caso los argumentos son 10 y 13
 console.log(album.slice(10, 13)); //retorna "Pup"
@@ -54,14 +54,14 @@ console.log(phrase.split("", "3")); //retorna "Buenos","dias", "¿como"
 // toLowerCase --> devuelve el valor del string convertido a minusculas
 
 const naame = "Peter";
-console.log(naame.toLowerCase()); // retorna "Peter"
+console.log(naame.toLowerCase()); // retorna "peter"
 
-// toUpperCasa --> devuelve el valor del string convertido a mayusculas
+// toUpperCase --> devuelve el valor del string convertido a mayusculas
 
 const nickname = "Pedro";
 console.log(nickname.toUpperCase()); // retorna "PEDRO"
 
-// trim --> elimina los espacion en blanco desde el principio hasta el final del string
+// trim --> elimina los espacios en blanco desde el principio hasta el final del string
 
 const frase = "          Luke, yo soy tu padre    ";
 console.log(frase.trim()); // retorna "Luke, yo soy tu padre"
