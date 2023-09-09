@@ -72,7 +72,7 @@ característica de JavaScript que te permite expandir una expresión iterable
  
  Aqui algunos ejemplos de como se puede usar el spread operator  */
 
-// Para copiar un arreglo:
+// Para copiar un array:
 
 const colores = ["rojo", "verde", "azul"];
 const coloresCopia = [...colores]; // ['rojo', 'verde', 'azul']

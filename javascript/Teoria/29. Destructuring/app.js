@@ -2,7 +2,7 @@
 objetos en variables individuales. Esto puede ser útil cuando tienes una estructura de datos compleja y 
 quieres acceder a sus valores de manera más fácil. */
 
-//..Aquí hay un ejemplo de cómo se puede usar el destructuring para extraer valores de un arreglo:
+//..Aquí hay un ejemplo de cómo se puede usar el destructuring para extraer valores de un array:
 
 const colores = ["rojo", "verde", "azul"];
 const [primerColor, segundoColor, tercerColor] = colores;
