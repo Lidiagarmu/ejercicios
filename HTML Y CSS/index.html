@@ -1,0 +1,70 @@
+<!-- estructura de un documento html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>My first heading</h1>
+    <p>My first paragraph</p>
+  </body>
+</html>
+
+<!-- 
+    
+******* 1- composicion de una ETIQUETA html:
+<nombre-etiqueta  nombre-atributo= "valor-atributo" 
+
+****** 2- ATRIBUTOS html:
+
+    En este ejemplo <p> serie la ETIQUETA, id el ATRIBUTO, cuyo valor asignado es "name"
+    de este modo tenemos una etiqueta con un atributo de tipo identificador (id) que hace referencia al contenido de dicha etiqueta
+    
+    <p id="name">Lidia Garcia</p>
+
+    - Los atributos siempre se especifican en la etiqueta de inicio
+    - Generalmente los atributos vienen en pares de nombre/valor: nombre="valor"
+
+***** 3- Tipos de ATRIBUTOS:
+
+*id: se suele usar cuando queremos localizar un elemento dentro de nuestro documento y sabemos que dicho elemento o etiqueta no se va a repetir dentro de nuestro documento
+
+*class: la idea de clases es asociar caracteristicas comunes a diferentes etiquetas, es decir,
+
+si tenemos varios <p> y queremos que visualmente sean iguales podemos asignarles la misma clase y asi su visualizacion en el navegador sera similar
+*lang: atributo idioma . Siempre se debe incluir dentro de la etiqueta <html> -> <p lang="es">Soy un texto.</p>
+     lang se puede utilizar en elementos anidados para especificar un idioma diferente al idioma del elemento padre
+         
+     <!doctype html>
+<html lang="es">
+....
+<body>
+    <p>Texto en español</p>
+    <p lang="en">Text in english.</p>
+    <p>saludo, en inglés <span lang="en">hello</span>, que significa hola.</p>
+</body>
+</html>
+
+*translate: se usa para indicar si el texto es traducible o no
+       <p>
+  hoy he comido un <span translate="no">Sandwich</span>.
+</p>
+
+
+*title: define info adicional .  el valor de este atributo se mostrará cuando el usuario
+detenga el ratón sobre el elemento un instante
+    
+     <div>
+  <img src="wikiBootLogo.jpg"
+    alt="logotipo de Wiki Boot."
+    title="Es una imagen con el logotipo" />
+</div>
+
+*accesskey: indica un atajo de teclado o shortcut
+
+*style: este utiliza las etiquetas de HTML y sirve para incrustar codigo CSS directamente en la etiqueta. Tambien se llama CSS en linea.
+La mejor forma de insertar codiga css es a traves de un documento con la extension .css aparte, aunque 
+hay situaciones en las que nos vemos obligados a insertar este codigo en linea
+   
+          <p style="background: blue; color: whitesmoke;">Usando el atributo style</p>
+-->
