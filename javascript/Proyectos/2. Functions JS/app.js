@@ -1,10 +1,18 @@
 /* **Iteración #1: Buscar el máximo**
 
-Completa la función que tomando dos números como argumento devuelva el más alto. */
+Completa la función que tomando dos números como argumento y que devuelva el más alto. */
 
-function sum(numberOne, numberTwo) {
-  // insert code
-}
+const sum = (numberOne, numberTwo) => {
+  // variable = (param) => {}
+  if (numberOne > numberTwo) {
+    return numberOne;
+  } else if (numberOne === numberTwo) {
+    return "Son iguales!!";
+  } else {
+    return numberTwo;
+  }
+};
+console.log(sum(3, 6)); // 6
 
 /* **Iteración #2: Buscar la palabra más larga**
   
@@ -35,9 +43,7 @@ function findLongestWord(param) {
 
 const numbers = [1, 2, 3, 5, 45, 37, 58];
 
-function sumAll(param) {
-  // insert code
-}
+// insert code
 
 /* **Iteración #4: Calcular el promedio**
   
