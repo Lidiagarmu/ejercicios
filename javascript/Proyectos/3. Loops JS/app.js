@@ -10,7 +10,11 @@ const products = [
   "Cinrurón de Orión",
   "AC/DC Camiseta",
 ];
-
+for (let i = 0; i < products.length; i++) {
+  if (products[i].includes("Camiseta")) {
+    console.log(products[i]); // imprime: Camiseta de Pokemon Camiseta de Basket AC/DC Camiseta
+  }
+}
 /* **Iteración #2: Condicionales avanzados**
 
 Comprueba en cada uno de los usuarios que tenga al menos dos trimestres aprobados y añade la propiedad ***isApproved*** a true o false en consecuencia. Una vez lo tengas compruébalo con un ***console.log***. 
@@ -27,9 +31,29 @@ const alumns = [
   { name: "Raquel Benito", T1: true, T2: true, T3: true },
 ];
 
+const añadirAprovado = (array) => {
+  for (let alumn of array) {
+    // este bucle for of es para eliminar la primera clave de cada objeto
+    let contador = 0;
+    let trimestres = Object.keys(alumn).slice(1); // object.Keys se usa para acceder a las claves de cada objeto alumn y con el metodo slice() elimino la primera clave que no nos interesa
+    for (let i = 0; i < trimestres.length; i++) {
+      if (alumn[trimestres[i]]) {
+        contador += 1;
+      }
+    }
+    if (contador >= 2) {
+      alumn.isApproved = true;
+    } else {
+      alumn.isApproved = false;
+    }
+  }
+};
+añadirAprovado(alumns);
+console.log("alumns", alumns);
+
 // Para añadir nueva propiedad a un objeto podéis hacerlo de esta forma mas sencilla:
 
-objeto.isApproved = true;
+//objeto.isApproved = true;
 
 //donde objeto es el objeto que recorremos (cada alumno en nuestro caso)
 
