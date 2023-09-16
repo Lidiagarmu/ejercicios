@@ -101,6 +101,14 @@ const placesToTravel = [
   "Filipinas",
   "Madagascar",
 ];
+for (let place of placesToTravel) {
+  console.log(place);
+} /* Japon
+Venecia
+Murcia
+Santander
+Filipinas
+Madagascar */
 
 /* **Iteración #4: Probando For...in**
 
@@ -112,6 +120,15 @@ const alien = {
   planet: "Eden",
   weight: "259kg",
 };
+
+for (let clave in alien) {
+  console.log("Alien tiene la clave " + clave + " con valor " + alien[clave]);
+} /*
+Alien tiene la clave name con valor Wormuck
+Alien tiene la clave race con valor Cucusumusu
+Alien tiene la clave planet con valor Eden
+Alien tiene la clave weight con valor 259kg
+*/
 
 /* **Iteración #5: Probando For**
 
@@ -127,6 +144,22 @@ const placesToTravel2 = [
   { id: 59, name: "Madagascar" },
 ];
 
+for (let i = 0; i < placesToTravel2.length; i++) {
+  if (placesToTravel2[i].id === 11 || placesToTravel2[i].id === 40) {
+    placesToTravel2.splice(i, 1); // el 1 significa que si se cumple la funcion me borra el splice ese elemento. Si pusiera 2, me borra ese elemento y el siguiente
+  } else {
+    placesToTravel2[i];
+  }
+}
+console.log(placesToTravel2);
+
+/*  { id: 5, name: 'Japan' },
+  { id: 23, name: 'Murcia' },
+  { id: 44, name: 'Filipinas' },
+  { id: 59, name: 'Madagascar' }
+
+  */
+
 /* **Iteración #6: Mixed For...of e includes**
 
 Usa un bucle **for...of** para recorrer todos los juguetes y elimina los que incluyan la palabra gato. Recuerda que puedes usar la 
@@ -139,6 +172,23 @@ const toys = [
   { id: 40, name: "El gato con Guantes" },
   { id: 40, name: "El gato felix" },
 ];
+const toySinGato = [];
+for (let toy of toys) {
+  if (!toy.name.includes("gato")) {
+    toySinGato.push(toy);
+  }
+}
+console.log("Objetos sin la palabra gato: ", toySinGato); /*
+
+/* imprime:
+Objetos sin la palabra gato:  [
+  { id: 5, name: 'Buzz MyYear' },
+  { id: 11, name: 'Action Woman' },
+  { id: 23, name: 'Barbie Man' }
+]
+
+
+
 
 /* **Iteración #7: For...of avanzado**
 
@@ -154,7 +204,15 @@ const toys2 = [
   { id: 40, name: "El gato felix", sellCount: 35 },
 ];
 
-/*  
+for (let toy of toys2) {
+  if (toy.sellCount > 15) {
+    popularToys.push(toy);
+  }
+}
+console.log(popularToys); /* { id: 11, name: 'Action Woman', sellCount: 24 },
+{ id: 40, name: 'El gato felix', sellCount: 35 } */
+
+/*
 
 **Concepto para ejercicio Iteración#2 ( Sergio ).**
 
