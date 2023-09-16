@@ -94,7 +94,7 @@ for (let i = 0; i < studentList.length; i++) {
 
 let studenList2 = ["IkerCas", "FerTorres", "RoberLewan", "NeymarJr"];
 /*no arrow*/
-studenList2.forEach(function (element) {
+studenList2.forEach((element) => {
   console.log(element);
 });
 

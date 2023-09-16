@@ -9,7 +9,7 @@ const sum = numbers.reduce(
   (accumulator, currentValue) => accumulator + currentValue
 );
 
-console.log(sum); // 15
+console.log("sumaaa de SUM  ES: ", sum); // 15
 
 /* En este ejemplo, hemos creado un array numbers con cinco números. Luego, hemos utilizado 
 reduce() para sumar todos los números del array y guardar el resultado en una variable sum. 
